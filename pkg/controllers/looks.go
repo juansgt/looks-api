@@ -4,21 +4,21 @@ import (
 	"look-api/pkg/models"
 
 	"github.com/juansgt/generics/services"
-	"github.com/juansgt/model-test/v2/dataAccess"
+	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
 )
 
 type LooksController struct {
-	findLooksQueryService services.IQueryServiceNoInput[[]dataAccess.Look]
+	findLooksQueryService services.IQueryServiceNoInput[[]lookRepository.Look]
 }
 
-func NewLooksController(findLooksQueryService services.IQueryServiceNoInput[[]dataAccess.Look]) *LooksController {
+func NewLooksController(findLooksQueryService services.IQueryServiceNoInput[[]lookRepository.Look]) *LooksController {
 	return &LooksController{
 		findLooksQueryService: findLooksQueryService,
 	}
 }
 
 func (looksController *LooksController) GetLooks() []models.Look {
-	var looks []dataAccess.Look = make([]dataAccess.Look, 0)
+	var looks []lookRepository.Look = make([]lookRepository.Look, 0)
 	var apiLooks []models.Look = make([]models.Look, 0)
 
 	looks = looksController.findLooksQueryService.Execute()

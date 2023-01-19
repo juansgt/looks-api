@@ -5,14 +5,14 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/juansgt/model-test/v2/dataAccess"
-	"github.com/juansgt/model-test/v2/services/findLooksService"
+	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
+	"github.com/juansgt/model-test/v3/services/findLooksService"
 )
 
 var looksController *controllers.LooksController
 
 func initializeDependencies() {
-	looksController = controllers.NewLooksController(findLooksService.NewFindLooksQueryService(new(dataAccess.LookRepositoryMock)))
+	looksController = controllers.NewLooksController(findLooksService.NewFindLooksQueryService(new(lookRepository.LookRepositoryMock)))
 }
 
 func main() {
