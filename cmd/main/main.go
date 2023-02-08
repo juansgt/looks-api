@@ -12,25 +12,22 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var looksController *controllers.LooksController
 var database *mongo.Database
-var mongoClient *mongo.Client
 
-func initializeDependencies() {
+func getLooksController() *controllers.LooksController {
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://atlasAdmin:Cripto0Virtual@cluster0.yolpv.mongodb.net/?retryWrites=true&w=majority"))
 	if err != nil {
 		panic(err)
 	}
-	mongoClient = client
-	database = mongoClient.Database("wap")
-	looksController = controllers.NewLooksController(findLooksService.NewFindLooksQueryService(lookRepository.NewLookRepositoryMongodb(database)))
+	database = client.Database("wap")
+
+	return controllers.NewLooksController(findLooksService.NewFindLooksQueryService(lookRepository.NewLookRepositoryMongodb(database)))
 }
 
 func main() {
-	initializeDependencies()
 	ginEngine := gin.Default()
 	ginEngine.GET("/looks", func(context *gin.Context) {
-		context.IndentedJSON(http.StatusOK, looksController.GetLooks())
+		context.IndentedJSON(http.StatusOK, getLooksController().GetLooks())
 	})
 	ginEngine.Run("localhost:9090")
 }
