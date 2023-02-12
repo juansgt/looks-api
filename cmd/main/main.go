@@ -29,5 +29,5 @@ func main() {
 	ginEngine.GET("/looks", func(context *gin.Context) {
 		context.IndentedJSON(http.StatusOK, getLooksController().GetLooks())
 	})
-	ginEngine.Run("localhost:9090")
+	ginEngine.Run("localhost:8080")
 }

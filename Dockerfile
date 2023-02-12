@@ -5,5 +5,5 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 RUN go build -o ./out ./cmd/main/main.go
-EXPOSE 9090:9090
+EXPOSE 8080:8080
 CMD ./out
