@@ -37,6 +37,6 @@ jobs:
           GIT_TAG: v1.0.0-beta.1
         run: |-
           docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$RELEASE_VERSION
-          docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+          docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$RELEASE_VERSION
 
         
