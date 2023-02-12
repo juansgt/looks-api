@@ -16,6 +16,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Set env version from tag
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
       - uses: google-github-actions/setup-gcloud@v0
         with:
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
@@ -33,7 +36,7 @@ jobs:
         env:
           GIT_TAG: v1.0.0-beta.1
         run: |-
-          docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+          docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$RELEASE_VERSION
           docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
 
         
