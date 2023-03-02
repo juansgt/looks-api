@@ -54,7 +54,7 @@ jobs:
       env:
         GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
       run: |-
-        docker tag $IMAGE_NAME:latest europe-southwest1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$RELEASE_VERSION
-        docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$RELEASE_VERSION
+        docker tag $IMAGE_NAME:latest europe-southwest1-docker.pkg.dev/$PROJECT_ID/the-wapp-images/$IMAGE_NAME:$RELEASE_VERSION
+        docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/the-wapp-images/$IMAGE_NAME:$RELEASE_VERSION
 
         
