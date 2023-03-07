@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: looks-api
-      PROJECT_ID: the-wap-377118
+      PROJECT_ID: the-wap-379720
     steps:
     - name: Checkout
       uses: actions/checkout@v2
