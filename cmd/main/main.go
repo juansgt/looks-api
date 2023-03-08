@@ -15,7 +15,7 @@ import (
 var database *mongo.Database
 
 func getLooksController() *controllers.LooksController {
-	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://atlasAdmin:Cripto0Virtual@cluster0.yolpv.mongodb.net/?retryWrites=true&w=majority"))
+	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://thewappcontact:MariaJuanPaula@the-wap.oriorrs.mongodb.net/?retryWrites=true&w=majority"))
 	if err != nil {
 		panic(err)
 	}
