@@ -1,10 +1,10 @@
 name: Build and push golang container image to google container registry
 
-on: [push]
-  #push:
+on:
+  push:
     # Pattern matched against refs/tags
-  #  tags:        
-  #    - '*'
+    tags:        
+      - '*'
 jobs:
   build-and-testing:
     name: Build and testing

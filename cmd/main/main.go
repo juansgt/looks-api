@@ -13,21 +13,22 @@ import (
 )
 
 var database *mongo.Database
+var looksController *controllers.LooksController
 
-func getLooksController() *controllers.LooksController {
+func init() {
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb+srv://thewappcontact:MariaJuanPaula@the-wap.oriorrs.mongodb.net/?retryWrites=true&w=majority"))
 	if err != nil {
 		panic(err)
 	}
-	database = client.Database("wap")
 
-	return controllers.NewLooksController(findLooksService.NewFindLooksQueryService(lookRepository.NewLookRepositoryMongodb(database)))
+	database = client.Database("wap")
+	looksController = controllers.NewLooksController(findLooksService.NewFindLooksQueryService(lookRepository.NewLookRepositoryMongodb(database)))
 }
 
 func main() {
 	ginEngine := gin.Default()
 	ginEngine.GET("/looks", func(context *gin.Context) {
-		context.IndentedJSON(http.StatusOK, getLooksController().GetLooks())
+		context.IndentedJSON(http.StatusOK, looksController.GetLooks())
 	})
 	ginEngine.Run()
 }
