@@ -30,6 +30,8 @@ github.com/juansgt/generics v1.1.1 h1:KBHdGEHltAcQR7MoVUemSuhqhsm4APJzPVOtNphK3E
 github.com/juansgt/generics v1.1.1/go.mod h1:uG4Xlub22gLqGkAWE6AsLX4489KYfZW5yUulCgKyrcc=
 github.com/juansgt/model-test/v3 v3.0.0-beta.5 h1:IaN1IFzhobafJt3bXiIQmMj0SpKR/SGLhBM9IOQsBdU=
 github.com/juansgt/model-test/v3 v3.0.0-beta.5/go.mod h1:mYF55GRyyW+cbvbN29pKLwjRcNvwnaCnJzjoVOay1Ms=
+github.com/juansgt/model-test/v3 v3.0.0-beta.6 h1:06uR2nqlR/2Fv9/r4MlA7HgHbRzOYKnLsa84BZPhXpU=
+github.com/juansgt/model-test/v3 v3.0.0-beta.6/go.mod h1:mYF55GRyyW+cbvbN29pKLwjRcNvwnaCnJzjoVOay1Ms=
 github.com/klauspost/compress v1.13.6/go.mod h1:/3/Vjq9QcHkK5uEr5lBEmyoZ1iFhe47etQ6QUkpK6sk=
 github.com/klauspost/compress v1.15.15 h1:EF27CXIuDsYJ6mmvtBRlEuB2UVOqHG1tAXgZ7yIO+lw=
 github.com/klauspost/compress v1.15.15/go.mod h1:ZcK2JAFqKOpnBlxcLsJzYfrS9X1akm9fHZNnD9+Vo/4=

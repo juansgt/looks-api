@@ -6,7 +6,7 @@ require (
 	github.com/gin-gonic/gin v1.8.2
 	github.com/golang/mock v1.6.0
 	github.com/juansgt/generics v1.1.1
-	github.com/juansgt/model-test/v3 v3.0.0-beta.5
+	github.com/juansgt/model-test/v3 v3.0.0-beta.6
 	github.com/stretchr/testify v1.8.1
 	go.mongodb.org/mongo-driver v1.11.2
 )
