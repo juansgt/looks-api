@@ -11,7 +11,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
-	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
+	"github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -45,8 +45,8 @@ func TestFindLooks_CorrectRequest_ReturnOkStatus(t *testing.T) {
 func findLooks() []lookRepository.Look {
 	var looks []lookRepository.Look
 	var look *lookRepository.Look = &lookRepository.Look{
-		Name:  "Dress",
-		Brand: "Bash",
+		Colour: "Dress",
+		Brand:  "Bash",
 	}
 	looks = make([]lookRepository.Look, 0, 3)
 

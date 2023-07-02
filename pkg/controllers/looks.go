@@ -4,7 +4,7 @@ import (
 	"look-api/pkg/models"
 
 	"github.com/juansgt/generics/services"
-	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
+	"github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
 )
 
 type LooksController struct {
@@ -24,7 +24,7 @@ func (looksController *LooksController) GetLooks() []models.Look {
 	looks = looksController.findLooksQueryService.Execute()
 
 	for _, look := range looks {
-		apiLooks = append(apiLooks, models.NewLook(look.Id(), look.Name, look.Brand))
+		apiLooks = append(apiLooks, models.NewLook(look.Id(), look.Colour, look.Brand))
 	}
 
 	return apiLooks

@@ -8,7 +8,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	lookRepository "github.com/juansgt/model-test/v3/dataAccess/lookRepository"
+	lookRepository "github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
 )
 
 // MockILookRepository is a mock of ILookRepository interface.

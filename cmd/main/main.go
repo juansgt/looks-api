@@ -6,8 +6,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
-	"github.com/juansgt/model-test/v3/services/findLooksService"
+	"github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
+	"github.com/juansgt/looks-model/v3/services/findLooksService"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
