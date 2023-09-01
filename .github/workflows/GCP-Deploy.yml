@@ -33,6 +33,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Retrieve Secret and Create File
+      env:
+        FIREBASE_ACCOUNT_KEY: ${{ secrets.FIREBASE_ACCOUNT_KEY }}
+      run: |
+        echo "$FIREBASE_ACCOUNT_KEY" > firebase-credentials-key.json
+        ls -l
+
     - name: Set env version from tag
       run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
