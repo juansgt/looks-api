@@ -41,7 +41,7 @@ func main() {
 }
 
 func authHandler(context *gin.Context) {
-	opt := option.WithCredentialsFile("../../firebase-credentials-key.json") // Replace with the path to your service account key JSON file
+	opt := option.WithCredentialsFile("firebase-credentials-key.json") // Replace with the path to your service account key JSON file
 	app, err := firebase.NewApp(context, nil, opt)
 	if err != nil {
 		context.IndentedJSON(http.StatusUnauthorized, gin.H{"error": "Unable to run Authorization infraestructure"})
